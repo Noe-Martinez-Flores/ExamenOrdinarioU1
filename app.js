@@ -11,11 +11,11 @@ onoff.addEventListener("click", () => {
         tv.chanel = 7;
         tv.mute = false;
         printObject(tv);
-        console.info("TV Encendida")
+        console.warn("TV Encendida")
     }else{
         tv.status = !tv.status;
         printObject(tv);
-        console.info("TV Apagada")
+        console.warn("TV Apagada")
     }
 });
 
@@ -29,7 +29,7 @@ volumenPlus.addEventListener("click", () => {
         }
         if ( tv.volume < 10 ){
             tv.volume++; 
-            console.info("Volumen Actual : ", tv.volume);
+            console.warn("Volumen Actual : ", tv.volume);
             printObject(tv);
         }else{
             console.error("Volumen Maximo de : ", tv.volume, " ha sido alcanzado");
@@ -45,7 +45,7 @@ chanelPlus.addEventListener("click", () => {
     if ( tv.status ){
         if ( tv.chanel < 100 ){
             tv.chanel++; 
-            console.info("Canal actual : ", tv.chanel);
+            console.warn("Canal actual : ", tv.chanel);
             printObject(tv);
         }else{
             console.error("Canal Maximo  ", tv.chanel, " ha sido alcanzado");
@@ -63,13 +63,13 @@ mute.addEventListener("click", () => {
             tv.mute = !tv.mute;
             previousVolumen = tv.volume;
             tv.volume = 0;
-            console.info("TV SILENCIADA");
+            console.warn("TV SILENCIADA");
             printObject(tv);;
             console.log("volumen : ",tv.volume);
         }else{
             tv.mute = !tv.mute;
             tv.volume = previousVolumen;
-            console.info("TV DESMUTEADA");
+            console.warn("TV DESMUTEADA");
             printObject(tv);;
             console.log("volumen : ",tv.volume);
         }
@@ -88,7 +88,7 @@ volumenMinus.addEventListener("click", () => {
         }
         if ( tv.volume > 1 ){
             tv.volume--; 
-            console.info("Volumen Actual : ", tv.volume);
+            console.warn("Volumen Actual : ", tv.volume);
             printObject(tv);
         }else{
             console.error("Volumen Minimo de : ", tv.volume, " ha sido alcanzado");
@@ -104,7 +104,7 @@ chanelMinus.addEventListener("click", () => {
     if ( tv.status ){
         if ( tv.chanel > 1 ){
             tv.chanel--; 
-            console.info("Canal actual : ", tv.chanel);
+            console.warn("Canal actual : ", tv.chanel);
             printObject(tv);
         }else{
             console.error("Canal Minimo  ", tv.chanel, " ha sido alcanzado");
